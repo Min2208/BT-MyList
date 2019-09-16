@@ -103,7 +103,13 @@ public class MyList<E> {
     }
 
     public void ensureCapacity(int minCapacity){
-
+        if (elements.length<minCapacity){
+            Object[] newArr=new Object[minCapacity];
+            for (int i=0;i<size;i++){
+                newArr[i]=elements[i];
+            }
+            elements=newArr;
+        }
     }
 
     public void clear(){
