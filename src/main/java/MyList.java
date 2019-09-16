@@ -76,7 +76,11 @@ public class MyList<E> {
     }
 
     public E[] clone() {
-        return (E[]) elements;
+        Object[] newElements=new Object[elements.length];
+        for (int i=0; i<elements.length;i++){
+            newElements[i]=elements[i];
+        }
+        return (E[]) newElements;
     }
 
     public boolean contains(E o) {
